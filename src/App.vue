@@ -1,19 +1,35 @@
 <template>
-  <div id="app">{{ text }}</div>
+    <div id="app">
+        <div id="cover"></div>
+        <Header></Header>
+    </div>
 </template>
 
 <script>
+import Header from './todo/header.vue'
+
 export default {
-  data() {
-    return {
-      text: 'abceeddddddd'
+    components: {
+        Header
     }
-  }  
 }
 </script>
 
-<style>
-  #app {
-    color: red
-  }
+<style lang="css" scoped>
+    #app {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    #cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #999;
+        opacity: .9;
+    }
 </style>
