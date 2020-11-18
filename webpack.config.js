@@ -64,11 +64,20 @@ const config = {
       {
         test: /\.jsx$/,
         loader: 'babel-loader'
-      }
+      },
+      {
+        test: /\.less/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ]
+      },
     ]
   }
 }
 
+config.mode = isDev ? 'development' : 'production';
 config.devtool = isDev ? 'eval-cheap-module-source-map' : false;
 if (isDev) {
   config.devServer = {
